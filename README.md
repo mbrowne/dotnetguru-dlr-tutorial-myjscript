@@ -6,10 +6,14 @@
 
 This repo exists so that this valuable tutorial isn't lost to the Internet.
 
-Originally published at http://www.dotnetguru.org/us/dlrus/DLR2.htm
+Originally published (but no longer available) at http://www.dotnetguru.org/us/dlrus/DLR2.htm
 
 ---
 
 Original HTML file:
 
-[index.html](index.html)
+[index.html](https://mbrowne.github.io/dotnetguru-dlr-tutorial-myjscript/)
+
+MyJScript source code:
+
+https://archive.codeplex.com/?p=myjscript
