@@ -1,0 +1,1567 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><head><script src="//archive.org/includes/analytics.js?v=cf34f82" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app12.us.archive.org';v.server_ms=551;archive_analytics.send_pageview({});});</script><script type="text/javascript" src="/_static/js/ait-client-rewrite.js" charset="utf-8"></script>
+<script type="text/javascript">
+WB_wombat_Init("https://web.archive.org/web/", "20110628062924", "www.dotnetguru.org:80");
+</script>
+<script type="text/javascript" src="/_static/js/wbhack.js" charset="utf-8"></script>
+<script type="text/javascript">
+__wbhack.init('https://web.archive.org/web');
+</script>
+<link rel="stylesheet" type="text/css" href="/_static/css/banner-styles.css" />
+<link rel="stylesheet" type="text/css" href="/_static/css/iconochive.css" />
+<!-- End Wayback Rewrite JS Include -->
+
+
+
+	
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" media="screen" href="/web/20110628062924cs_/http://www.dotnetguru.org/us/dlrus/screen.css">
+		
+		<title>Create your own language on the DLR</title>
+		
+		<style type="text/css">
+.style1 {
+	font-family: Arial;
+}
+.style2 {
+	border-style: solid;
+	border-width: 1px;
+}
+.style3 {
+	text-align: center;
+}
+.style5 {
+	text-decoration: underline;
+}
+.style8 {
+	border-style: solid;
+	border-width: 1px;
+	background-color: #FFFFFF;
+}
+.style9 {
+	border-width: 0px;
+}
+.style10 {
+	text-decoration: none;
+}
+.style11 {
+	font-weight: bold;
+}
+.style12 {
+	text-align: left;
+}
+.style13 {
+	border-style: solid;
+	border-width: 0px;
+}
+.style14 {
+	border-style: solid;
+	border-width: 1px;
+	text-align: center;
+}
+.style15 {
+	background-color: #FFFFFF;
+}
+.style16 {
+	color: #000000;
+}
+</style></head><body><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script type="text/javascript" src="/_static/js/timestamp.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/graph-calc.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/auto-complete.js" charset="utf-8"></script>
+<script type="text/javascript" src="/_static/js/toolbar.js" charset="utf-8"></script>
+<style type="text/css">
+body {
+  margin-top:0 !important;
+  padding-top:0 !important;
+  /*min-width:800px !important;*/
+}
+.wb-autocomplete-suggestions {
+    text-align: left; cursor: default; border: 1px solid #ccc; border-top: 0; background: #fff; box-shadow: -1px 1px 3px rgba(0,0,0,.1);
+    position: absolute; display: none; z-index: 2147483647; max-height: 254px; overflow: hidden; overflow-y: auto; box-sizing: border-box;
+}
+.wb-autocomplete-suggestion { position: relative; padding: 0 .6em; line-height: 23px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.02em; color: #333; }
+.wb-autocomplete-suggestion b { font-weight: bold; }
+.wb-autocomplete-suggestion.selected { background: #f0f0f0; }
+</style>
+<div id="wm-ipp-base" lang="en" style="display:none;direction:ltr;">
+<div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;">
+<div id="wm-ipp-inside">
+  <div style="position:relative;">
+    <div id="wm-logo" style="float:left;width:130px;padding-top:10px;">
+      <a href="/web/" title="Wayback Machine home page"><img src="/_static/images/toolbar/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0" /></a>
+    </div>
+    <div class="r" style="float:right;">
+      <div id="wm-btns" style="text-align:right;height:25px;">
+                  <div id="wm-save-snapshot-success">success</div>
+          <div id="wm-save-snapshot-fail">fail</div>
+          <a href="#"
+             onclick="__wm.saveSnapshot('http://www.dotnetguru.org/us/dlrus/DLR2.htm', '20110628062924')"
+             title="Share via My Web Archive"
+             id="wm-save-snapshot-open"
+          >
+            <span class="iconochive-web"></span>
+          </a>
+          <a href="https://archive.org/account/login.php"
+             title="Sign In"
+             id="wm-sign-in"
+          >
+            <span class="iconochive-person"></span>
+          </a>
+          <span id="wm-save-snapshot-in-progress" class="iconochive-web"></span>
+        	<a href="http://faq.web.archive.org/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color:rgb(87,186,244);font-size:160%;"></span></a>
+	<a id="wm-tb-close" href="#close" onclick="__wm.h(event);return false;" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
+      </div>
+      <div id="wm-share" style="text-align:right;">
+	<a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://web.archive.org/web/20110628062924/http://www.dotnetguru.org:80/us/dlrus/DLR2.htm', '', 'height=400,width=600'); return false;" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
+	<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=https://web.archive.org/web/20110628062924/http://www.dotnetguru.org:80/us/dlrus/DLR2.htm&amp;via=internetarchive', '', 'height=400,width=600'); return false;" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
+      </div>
+    </div>
+    <table class="c" style="">
+      <tbody>
+	<tr>
+	  <td class="u" colspan="2">
+	    <form target="_top" method="get" action="/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="http://www.dotnetguru.org/us/dlrus/DLR2.htm" onfocus="this.focus();this.select();" /><input type="hidden" name="type" value="replay" /><input type="hidden" name="date" value="20110628062924" /><input type="submit" value="Go" /></form>
+	  </td>
+	  <td class="n" rowspan="2" style="width:110px;">
+	    <table>
+	      <tbody>
+		<!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+		<tr class="m">
+		  <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20110520044803/http://www.dotnetguru.org:80/us/dlrus/DLR2.htm" title="20 May 2011"><strong>May</strong></a></td>
+		  <td class="c" id="displayMonthEl" title="You are here: 06:29:24 Jun 28, 2011">JUN</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20110729121026/http://www.dotnetguru.org:80/us/dlrus/DLR2.htm" title="29 Jul 2011"><strong>Jul</strong></a></td>
+		</tr>
+		<!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+		<tr class="d">
+		  <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20110520044803/http://www.dotnetguru.org:80/us/dlrus/DLR2.htm" title="04:48:03 May 20, 2011"><img src="/_static/images/toolbar/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0" /></a></td>
+		  <td class="c" id="displayDayEl" style="width:34px;font-size:24px;white-space:nowrap;" title="You are here: 06:29:24 Jun 28, 2011">28</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20110729121026/http://www.dotnetguru.org:80/us/dlrus/DLR2.htm" title="12:10:26 Jul 29, 2011"><img src="/_static/images/toolbar/wm_tb_nxt_on.png" alt="Next capture" width="14" height="16" border="0" /></a></td>
+		</tr>
+		<!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+		<tr class="y">
+		  <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20090916122911/http://www.dotnetguru.org:80/us/dlrus/DLR2.htm" title="16 Sep 2009"><strong>2009</strong></a></td>
+		  <td class="c" id="displayYearEl" title="You are here: 06:29:24 Jun 28, 2011">2011</td>
+		  <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20130823151803/http://www.dotnetguru.org:80/us/dlrus/DLR2.htm" title="23 Aug 2013"><strong>2013</strong></a></td>
+		</tr>
+	      </tbody>
+	    </table>
+	  </td>
+	</tr>
+	<tr>
+	  <td class="s">
+	    	    <div id="wm-nav-captures">
+	      	      <a class="t" href="/web/20110628062924*/http://www.dotnetguru.org/us/dlrus/DLR2.htm" title="See a list of every capture for this URL">40 captures</a>
+	      <div class="r" title="Timespan for captures of this URL">26 Apr 2008 - 24 Aug 2019</div>
+	      </div>
+	  </td>
+	  <td class="k">
+	    <a href="" id="wm-graph-anchor">
+	      <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+		<canvas id="wm-sparkline-canvas" width="600" height="27" border="0"></canvas>
+	      </div>
+	    </a>
+	  </td>
+	</tr>
+      </tbody>
+    </table>
+    <div style="position:absolute;bottom:0;right:2px;text-align:right;">
+      <a id="wm-expand" class="wm-btn wm-closed" href="#expand" onclick="__wm.ex(event);return false;"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span style="font-size:80%">About this capture</span></a>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
+            <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center">COLLECTED BY</div>
+    <div style="padding:3px;position:relative" id="wm-collected-by-content">
+            <div style="display:inline-block;vertical-align:top;width:50%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls);"></span>
+		Organization: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+      <div style="display:inline-block;vertical-align:top;width:49%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls)"></span>
+		<div>Collection: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a></div>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+    </div>
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center" title="Timestamps for the elements of this page">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="/_static/images/loading.gif" alt="loading" /></div>
+    </div>
+  </div></div></div></div><script type="text/javascript">
+__wm.bt(600,27,25,2,"web","http://www.dotnetguru.org/us/dlrus/DLR2.htm","2011-06-28",1996,"/_static/",['css/banner-styles.css','css/iconochive.css']);
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+		
+		<div id="flowing">
+			<div id="pageFrame">
+	
+				<div id="masthead">
+					<div id="innerMasthead">
+						<h1 class="style1"><span lang="en-us">Create</span> your own language on 
+						top of the DLR</h1>
+																	</div>
+				</div>
+	
+				<div class="hnav">
+&nbsp;&nbsp; Author : Lionel Laské (llaske@c2s.fr)
+				</div>
+	
+				<div id="contentColumn">
+					<div id="innerContentColumn">
+						<hr class="hide">
+						<p>
+<a href="#1">Intr<span lang="en-au">oduction</span></a><span lang="en-au"><br>
+<a href="#2">About DLR</a><br>
+<a href="#3">MyJScript</a><br>
+<a href="#4">Language context</a><br>
+<a href="#5">Create a syntax tree with the DLR</a><br>
+<a href="#6">Build syntax tree from the grammar</a><br>
+<a href="#7">Generate variables</a><br>
+<a href="#8">Using variables</a><br>
+<a href="#9">Data types</a><br>
+<a href="#10">Rules to run your syntax tree</a><br>
+<a href="#11">Object oriented programming with MyJScript</a><br>
+<a href="#12">Set and get object properties</a><br>
+<a href="#13">Build and call methods</a><br>
+<a href="#14">Global context and built-in functions</a><br>
+<a href="#15">CLR interoperability</a><br>
+<a href="#16">Command line interpreter</a><br>
+<a href="#17">Interoperability with other DLR languages</a><br>
+<a href="#18">To learn more</a><br>
+<a href="#19">Conclusion</a><br>
+<a href="#20">Acknowledgments</a></span><br>
+</p>
+						<h2><a name="1">Introduction</a></h2>
+						<p>You need sometimes in an application to provide to 
+						the user its own <span lang="fr">programming </span>
+						language. For example to let users configure theirs own rules 
+						in the engine or allow them to change operations 
+						to compute a field. In these cases, as a developer, you 
+						need to build your own interpreter or compiler and plug 
+						it with your .NET code. So, you not only have to have good knowledge in writing a scanner and a parser, you also 
+						need to have a very good understanding of code 
+						generation to run statements of your new language.</p>
+						<p>The Dynamic Language Runtime (DLR) is a layer on top 
+						of the .NET Framework 3.5 aiming at help you to build dynamic 
+						languages in .NET. Languages created with the DLR could 
+						be a language embedded in an application (like before) 
+						or a new language for the .NET platform like IronPython 
+						or IronRuby provided by Microsoft.</p>
+						<p>Here are the main objectives of the DLR:</p>
+						<ul>
+							<li>Allow to build more easily a dynamic language,</li>
+							<li>Allow interoperability between a dynamic 
+							language and CLR,</li>
+							<li>Allow interoperability between all dynamic 
+							languages built on DLR.</li>
+						</ul>
+						<p>In this article, we&#39;ll learn step by step how to 
+						write a new 
+						language on top of the DLR. </p>
+						<h2><a name="2"><span lang="fr">About</span> DLR</a></h2>
+						<p><span lang="fr">The DLR is a DLL named &quot;Microsoft.Scripting.dll&quot;. 
+						Today, DLR is provided with SilverLight and, as source 
+						code, with all dynamics languages from Microsoft (IronPython 
+						and Iron Ruby). DLR is distribute under the open source 
+						license </span>
+						<a href="https://web.archive.org/web/20110628062924/http://www.microsoft.com/resources/sharedsource/licensingbasics/publiclicense.mspx">
+						Microsoft Public Licen<span lang="fr">s</span>e</a>.</p>
+						<p><span lang="fr">The DLR defines a namespace &quot;Microsoft.Scripting&quot; 
+						and few sub-namespaces. The&nbsp; Namespaces used is this article 
+						are </span>:</p>
+						<ul>
+							<li><span lang="fr">Microsoft.Scripting.Ast for 
+							abstract syntax trees,</span></li>
+							<li>Microsoft.Scripting.<span lang="fr">Hosting to 
+							host DLR in your application</span>,</li>
+							<li>Microsoft.Scripting.<span lang="fr">Shell to 
+							build your own command line interpreter.</span></li>
+						</ul>
+						<p><span lang="fr">The DLR was built (and continue to be 
+						built) with each release of Microsoft&#39;s dynamics 
+						languages. So the source code structure is not fully 
+						stable today. The DLR version used here is v1.0.0.1000 
+						provided with IronPython 2.0 beta 1. I&#39;ll update the sample 
+						included in this article when the last version of the DLR will be available.</span> </p>
+						<h2><a name="3">MyJScript</a></h2>
+						<p><span lang="fr">In this article, we are going to use 
+						a language derived from JavaScript, MyJScript. 
+						JavaScript is interesting because it is a language far 
+						from C# and VB.NET but not so complex to write as 
+						compiler. Here are the main features of MyJScript,</span></p>
+						<ul>
+							<li><strong>JavaScrip<span lang="fr">t</span><span lang="fr"> 
+							based syntax</span>:</strong> <span lang="fr">
+							semi-colon, brackets, &quot;var&quot; and &quot;function&quot; keywords,</span> </li>
+							<li><strong><span lang="fr">JavaScript based data 
+							types</span>:</strong> <span lang="fr">int and 
+							string are supported in MyJScript. Both ways of 
+							write string constants are allowed: single-quoted and 
+							double-quoted. MyJScript strings support methods: 
+							length, substr, bold and blink</span>, </li>
+							<li><strong><span lang="fr">Optional variable declaration</span>:</strong> <span lang="fr">
+							Variables are declared using the keyword &quot;var&quot;. A 
+							non declared variable is considered to be a global 
+							variable,</span>
+							</li>
+							<li><strong><span lang="fr">Mix of statements and 
+							declaration</span>:</strong> <span lang="fr">
+							MyJScript compiler run statements in file order. So 
+							functions should be declared before their first use</span>,</li>
+							<li><strong><span lang="fr">Object oriented</span>:</strong> 
+							<span lang="fr">you can create object calling the 
+							constructor and using &quot;new&quot; keyword. you can set or 
+							get member values (methods and properties). The &quot;this&quot; 
+							keyword allows you to handle the current instance</span>. 
+						&nbsp; </li>
+						</ul>
+						<p><span lang="fr">These features are enough to allow us 
+						a study of main 
+						DLR features. Note that MyJScript is a just a 
+						sample. MyJScript is not related to the future &quot;Managed 
+						JScript&quot; from Microsoft.</span></p>
+						<p><span lang="fr">Let&#39;s see two examples of MyJScript:</span> &nbsp; </p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    function fact(n) {
+    <span class="kwrd">    if</span> (n==0) <span class="kwrd">return</span> 1;
+        <span class="kwrd">    return</span> n*fact(n-1);
+    }
+
+    write(<span class="str">"!4 = "</span> + fact(4));</pre>						<p>
+						<span lang="fr">In this first sample, a factorial 
+						function is declared then I call it recursively. On the 
+						last line, you can see that int values are automatically 
+						converted to string when needed. Such conversion is not 
+						allowed in C#.</span></p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    <span class="kwrd">function</span> Cat(name) {
+        <span class="kwrd">this</span>.name = name;
+        <span class="kwrd">this</span>.miaow = <span class="kwrd">function</span> () { write(<span class="kwrd">this</span>.name+<span class="str">' said Miaow'</span>); };
+    }
+    
+    a = <span class="kwrd">new</span> Cat(<span class="str">'Felix'</span>);
+    a.miaow();
+    Cat(<span class="str">"this"</span>);
+    <span class="kwrd">this</span>.miaow();</pre>
+    <p><span lang="fr">In this second sample, I handle MyJScript oriented 
+	object features. First I declared a constructor for a &quot;Cat&quot; class then 
+	I 
+	create an instance of this object. The &quot;this&quot; keyword is used also: at first to 
+	handle current instance in the &quot;Cat&quot; constructor, then to handle global 
+	context. Finally, note that both ways to write strings are used here (single-quoted 
+	or double-quoted).</span></p>
+						<h2><a name="4"><span lang="fr">L</span>ang<span lang="fr">u</span>age</a><span lang="fr"> 
+						context</span></h2>
+						<p><span lang="fr">The first thing to do to create your 
+						own language on the DLR is to write its &quot;context&quot;. This 
+						context provide language property (name, id, version, 
+						...) and defined entry points for DLR. Find below 
+						MyJScript&#39;s context. It&#39;s a class derivated from &quot;Microsoft.Scripting.LanguageContext&quot;:</span></p>
+						<pre class="csharpcode">
+    <span class="kwrd">class</span> MJSLanguageContext : LanguageContext
+    {
+        <span class="rem">// Construct<span lang="fr">or</span>: <span lang="fr">initialize </span>"binder"</span>
+        <span class="kwrd">public</span> MJSLanguageContext(ScriptDomainManager);
+        
+        <span class="rem">// <span lang="fr">L</span>ang<span lang="fr">u</span>age<span lang="fr"> description</span></span>
+        <span class="kwrd">public</span> <span class="kwrd">override</span> Guid LanguageGuid;
+        <span class="kwrd">public</span> <span class="kwrd">override</span> <span class="kwrd">string</span> DisplayName;
+        <span class="kwrd">public</span> <span class="kwrd">override</span> Version LanguageVersion;
+        
+        <span class="rem">// <span lang="fr">P</span>arser<span lang="fr"> entry point</span></span>
+        <span class="kwrd">public</span> <span class="kwrd">override</span> LambdaExpression ParseSourceCode(CompilerContext);
+        
+        <span class="rem">// <span lang="fr">Look for a</span> global<span lang="fr"> symbol</span></span>
+        <span class="kwrd">public</span> <span class="kwrd">override</span> <span class="kwrd">bool</span> TryLookupGlobal(CodeContext, SymbolId, <span class="kwrd">out</span> <span class="kwrd">object</span> );
+        
+        <span class="rem">// <span lang="fr">Command line customization</span></span>
+        <span class="kwrd">public</span> <span class="kwrd">override</span> ServiceType GetService&lt;ServiceType&gt;(<span class="kwrd">params</span> <span class="kwrd">object</span>[]);
+        <span class="kwrd">public</span> <span class="kwrd">override</span> <span class="kwrd">string</span> FormatException(Exception exception);
+    }
+</pre>
+						<p><span lang="fr">MJSLanguageContext constructor is the 
+						most important method here. It provide initialization 
+						for built-in functions (&quot;write&quot; for example) and create 
+						the language binding which set all rules for our 
+						language.</span></p>
+						<p><span lang="fr">Another important method from 
+						language context is ParseSourceCode</span>.
+						<span lang="fr">Here is ParseSourceCode method for 
+						MyJScript.</span></p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+        <span class="kwrd">public</span> <span class="kwrd">override</span> LambdaExpression ParseSourceCode(CompilerContext context)
+        {
+            <span class="rem">// Call MyJScript parser</span>
+            Parser parser = <span class="kwrd">new</span> Parser(context.SourceUnit);
+            parser.Parse();
+
+            <span class="rem">// Return the generated AST</span>
+            <span class="kwrd">return</span> parser.Result;
+        }
+</pre>						<p><span lang="fr">ParseSourceCode is the true entry 
+						point for MyJScript interpreter. ParseSourceCode takes as 
+						parameter a context which contains source code to execute 
+						and should return the resulting syntax tree as a 
+						LambdaExpression. Then the 
+						syntax tree will be run by the DLR.</span></p>
+						<h2><a name="5">C<span lang="fr">reate a syntax tree 
+						with</span></a> the D<span lang="fr">LR</span></h2>
+						<p><span lang="fr">A syntax tree is a way to represent 
+						hierarchically a program from our language. Each node is 
+						an element: statement, operator or value. Take for 
+						example the statement:</span></p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    res = n * (n-1);
+</pre>
+						<p><span lang="fr">It could be represented by a tree like this:</span> </p>
+						<img src="/web/20110628062924im_/http://www.dotnetguru.org/us/dlrus/dlr2_1.jpg"/>
+						<p><span lang="fr">The namespace &quot;Microsoft.Script.Ast&quot; 
+						contains one AST node for each element usable in a 
+						language built on CLS (Common Language Specification). 
+						So, our previous sample could be build as an AST with C# 
+						statements:</span></p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    Ast.Statement(span,
+        Ast.Assign(
+            res,
+            Ast.Action.Operator(
+                Operators.Multiply,
+                <span class="kwrd">typeof</span>(<span class="kwrd">object</span>),
+                Ast.Read(n),
+                Ast.Action.Operator(
+                    Operators.Subtract,
+                    <span class="kwrd">typeof</span>(<span class="kwrd">object</span>),
+                    Ast.Read(n),
+                    Ast.Constant(1)
+                )
+            )
+        )
+    );
+</pre>
+						<p><span lang="fr">Of course, it&#39;s slightly &quot;verbose&quot;. 
+						Some of you may have noticed some similarities with 
+						CodeDOM API. Both APIs provide a way to represent a 
+						program: AST in DLR is an API to generate IL code 
+						while CodeDOM API is an API to generate source code 
+						in C# or VB.NET.</span></p>
+						<h2><span lang="fr">Build syntax tree from the grammar</span></h2>
+						<p><span lang="fr">For those of you familiar with 
+						compiler&#39;s theory, you know that to build a syntax tree 
+						from a text, you must follow several steps:</span></p>
+						<ul>
+							<li><span lang="fr"><strong>Scanning</strong>: the 
+							scanner&#39;s job is to break up a text into known words. 
+							Known words for MyJScript are, for example: &quot;var&quot;, &quot;function&quot;, 
+							&quot;if&quot; or &quot;+&quot;,</span></li>
+							<li><strong><span lang="fr">Parsing</span>: </strong>
+							<span lang="fr">the parser&#39;s job is to ensure that 
+							all known words are in a right order,</span> </li>
+							<li><strong><span lang="fr">Build syntax tree</span>:</strong> 
+							<span lang="fr">build a syntax tree in memory at the 
+							same time that parsing</span>.</li>
+						</ul>
+						<p><span lang="fr">A deep discussion on scanning and 
+						parsing is out of scope of this article. However if 
+						you&#39;re interested by these tasks, a good introduction 
+						from Joel Pobar could be found in the
+						<a href="https://web.archive.org/web/20110628062924/http://msdn2.microsoft.com/en-us/magazine/cc136756.aspx">
+						February 2008 MSDN Magazine issue</a>. For MyJScript, 
+						the parser is generated by Jay, a Yacc clone. Here is 
+						our parser&#39;s interface:</span></p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    <span class="kwrd">class</span> Parser
+    {
+        <span class="kwrd">public</span> Parser (SourceUnit source)
+        {
+            ...
+        }
+        
+        <span class="kwrd">public</span> <span class="kwrd">bool</span> Parse()
+        {
+            ...
+        }
+        
+        <span class="kwrd">public</span> LambdaExpression Result
+        {
+            get { <span class="kwrd">return</span> generator.Result; }
+        }
+    }
+</pre>
+						<p><span lang="fr">The parser object is initialized with a 
+						SourceUnit. SourceUnit is a DLR objet used to represent 
+						a source code coming from a command line or coming from 
+						a stream of characters in a source file. By the way, 
+						both sources could be processed differently. MyJScript 
+						parsing is run by a call of the Parse method. The Building 
+						of the AST is done at the same time that the parsing. 
+						For a maximum simplicity all AST building for MyJScript 
+						is done in a dedicated class named &quot;Generator&quot;.</span></p>
+						<p><span lang="fr">Let&#39;s take a sample: the MyJScript 
+						grammar rule for IF statement. Here how this rule is 
+						written in Jay/YACC:</span></p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    if_else: IF LPAR cond_expr RPAR block_or_statement ELSE block_or_statement 
+            { $$ = generator.IfElse($3 <span class="kwrd">as</span> Expression, $5 <span class="kwrd">as</span> Expression, $7 <span class="kwrd">as</span> Expression); }
+        | IF LPAR cond_expr RPAR block_or_statement 
+            { $$ = generator.IfElse($3 <span class="kwrd">as</span> Expression, $5 <span class="kwrd">as</span> Expression, <span class="kwrd">null</span>); }
+</pre>
+						<p><span lang="fr">Here is the generated code for this rule 
+						in MyJScript Generator&#39;s</span>: </p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+        <span class="kwrd">public</span> Expression IfElse(Expression condition, Expression ifTrue, Expression ifFalse)
+        {
+            <span class="kwrd">if</span> (ifFalse == <span class="kwrd">null</span>)
+                <span class="kwrd">return</span> Ast.IfThen(
+                    Ast.Convert(condition, <span class="kwrd">typeof</span>(<span class="kwrd">bool</span>)),
+                    ifTrue
+                );
+
+            <span class="kwrd">return</span> Ast.IfThenElse(
+                Ast.Convert(condition, <span class="kwrd">typeof</span>(<span class="kwrd">bool</span>)),
+                ifTrue,
+                ifFalse
+            );
+        }
+</pre>
+						<p><span lang="fr">It&#39;s pretty easy because I just need 
+						to build corresponding nodes for IfThen and IfThenElse. 
+						Others MyJScript statements generate an AST in a very 
+						same way.</span></p>
+						<h2><a name="7">G<span lang="fr">enerate </span>variables</a></h2>
+						<p>I<span lang="fr"> should now put the focus specifically 
+						on variables handling in DLR. Variables scope are 
+						heavily dependant on the programming language that is used . From 
+						a programming language to another, a variable could be: 
+						global, local to a function, local to a block, be a 
+						class member, be an instance member, ... Whatever it 
+						could be, variable scope is always related to grammar. 
+						So, in C# for example, when you use a variable in a 
+						method, its scope could be deducted from the syntax. I 
+						must check first if the variable is local to the block, 
+						then if it&#39;s a parameter and finally if it&#39;s an instance 
+						variable (or a class variable for a static method).</span></p>
+						<p><span lang="fr">The DLR allows you to declare variables into 
+						objets LambdaBuilder. An LambdaBuilder is an object to 
+						build a Lambda Expression either for the 
+						block of code of a function or either for an embedded block of 
+						code. The method LambdaBuilder.CreateLocalVariable creates a 
+						variable for the current block. The method LambdaBuilder.CreateParameter creates a parameter for the 
+						current block</span>.</p>
+						<p><span lang="fr">In MyJScript a variable could: be 
+						declared locally to a function, be a parameter or, by 
+						default (because variable declaration is not required), be a global variable. So, the following MyJScript 
+						code...</span></p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    a = 100;
+    
+    <span class="kwrd">function</span> foo(n) {
+        <span class="kwrd">var</span> b = n + a;
+        <span class="kwrd">return</span> b;
+    }
+</pre>
+						<p><span lang="fr">... could be translated to following 
+						LambdaExpression</span>: </p>
+						<img src="/web/20110628062924im_/http://www.dotnetguru.org/us/dlrus/DLR2_2.jpg"/>
+						<p><span lang="fr">MyJScript compiler stores itself 
+						variables scope using dictionary. One dictionary is 
+						used for global variables, one dictionary is used for 
+						local variables. MyJScript parameters are declared on 
+						the fly with each function declaration. The following code 
+						is called by the parser when the beginning of a function is detected.</span> </p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+        <span class="kwrd">public</span> <span class="kwrd">void</span> BeginFunction(String name, List&lt;String&gt; arguments)
+        {
+            <span class="kwrd">if</span> (name != <span class="kwrd">null</span> &amp;&amp; globalVariables.ContainsKey(name))
+            {
+                report.Error(…); <span class="rem">// function <span lang="fr">already exist</span></span>
+                <span class="kwrd">return</span>;
+            }
+
+            previousMethod = currentMethod;
+            currentMethod = Ast.Lambda(name ?? <span class="str">"&lt;member function&gt;"</span>, <span class="kwrd">typeof</span>(<span class="kwrd">object</span>));
+
+            localVariables = <span class="kwrd">new</span> Dictionary&lt;<span class="kwrd">string</span>, Variable&gt;();
+
+            currentMethod.CreateParameter(SymbolTable.StringToId(<span class="str">"this"</span>), <span class="kwrd">typeof</span>(<span class="kwrd">object</span>));           
+            <span class="kwrd">if</span> (arguments.Count &gt; 0)
+            {
+                <span class="kwrd">foreach</span> (<span class="kwrd">string</span> parameter <span class="kwrd">in</span> arguments)
+                    currentMethod.CreateParameter(SymbolTable.StringToId(parameter), <span class="kwrd">typeof</span>(<span class="kwrd">object</span>));
+            }
+        }
+</pre>
+						<p>One can notice that </p>
+						<ul>
+							<li><span lang="fr">The globalVariables dictionary 
+							stores all global variables. When a new function 
+							declaration is found, I should ensure first that a 
+							variable with the same name don&#39;t already exist. 
+							With DLR, a function is just a callable variable !</span></li>
+							<li><span lang="fr">The localVariables dictionary 
+							is initialized at the beginning of each function, not 
+							at the beginning of each block. In MyJScript, like in 
+							JavaScript, variables could only be local to a 
+							function. For more complex languages (like C#), 
+							variables could be local to a block. In this case, a 
+							dictionary should be used for each block of code.</span></li>
+							<li><span lang="fr">Each parameter is created using 
+							a call to LambdaBuilder.CreateParameter. &quot;this&quot; is added 
+							as first parameter for each function. We&#39;ll talk 
+							about that later in this article</span>.</li>
+							<li><span lang="fr">Finally, note that variables 
+							names are not handled directly, the DLR use 
+							identifier instead. The SymbolTable.StringToId 
+							method is used to translate names to identifiers.</span> </li>
+						</ul>
+						<h2><a name="8">U<span lang="fr">sing</span> variables</a></h2>
+						<p><span lang="fr">In the previous paragraph, we saw how 
+						variables are stored. So, it&#39;s now easy to write code to 
+						retrieve variable&#39;s values. Here how it works in 
+						MyJScript:</span> </p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+        <span class="kwrd">public</span> Expression Variable(<span class="kwrd">string</span> name)
+        {
+            Variable variable = <span class="kwrd">null</span>;
+            <span class="kwrd">if</span> (localVariables.ContainsKey(name))
+                variable = localVariables[name]; <span class="rem">// <span lang="fr">L</span>ocal<span lang="fr"> variable</span></span>
+
+            <span class="kwrd">else</span> 
+            {
+                <span class="kwrd">if</span> (currentMethod != <span class="kwrd">null</span>)
+                {
+                    <span class="kwrd">foreach</span> (Variable param <span class="kwrd">in</span> currentMethod.Parameters)
+                        <span class="kwrd">if</span> (SymbolTable.IdToString(param.Name).Equals(name))
+                            variable = param;
+
+                    <span class="kwrd">if</span> (variable != <span class="kwrd">null</span>)
+                        <span class="kwrd">return</span> Ast.Read(variable); <span class="rem">// Param<span lang="fr">eter</span></span>
+                }
+
+                <span class="kwrd">if</span> (variable == <span class="kwrd">null</span>)
+                {
+                    <span class="kwrd">if</span> (!globalVariables.ContainsKey(name))
+                        <span class="kwrd">return</span> Ast.Read(SymbolTable.StringToId(name));  <span class="rem">// <span lang="fr">Unknown v</span>ariable</span>
+                    variable = globalVariables[name]; <span class="rem">// <span lang="fr">G</span>lobal<span lang="fr"> variable</span></span>
+                }
+            }
+
+            <span class="kwrd">return</span> Ast.Read(variable);  <span class="rem">// <span lang="fr">Known v</span>ariable</span>
+        }
+</pre>
+						<p>I<span lang="fr"> first look in local variables 
+						dictionary, then in parameters and finally in global 
+						variables dictionary. In the case of a global variable:</span></p>
+						<ul>
+							<li><span lang="fr">If the variable is found, a node 
+							Ast.Read with an object variable is returned. This 
+							expression is called &quot;BoundExpression&quot; because the 
+							variable is bound to the read expression. So, DLR 
+							know directly the place to get variable&#39;s value.</span></li>
+							<li><span lang="fr">If the variable is not found, a 
+							node Ast.Read with an idenfier (identifier is 
+							variable&#39;s name in symbol table) is returned</span>.<span lang="fr"> 
+							This expression is called &quot;UnboundExpression&quot; 
+							because the DLR must look at runtime where the 
+							variable&#39;s value is stored. Note that unbound 
+							expression could be meet for example when the variable was 
+							declared in another language (see below).</span></li>
+						</ul>
+						<h2><span lang="fr">Data types</span></h2>
+						<p>
+						<a href="https://web.archive.org/web/20110628062924/http://blogs.msdn.com/hugunin/archive/2007/05/02/the-one-true-object-part-1.aspx">
+						<span class="style16"><span lang="fr">In his </span>
+						</span>blog</a><span lang="fr">, </span>J<span lang="fr">im 
+						Hugunin said that handling of data types was one of the 
+						major choice in the DLR architecture. The problem is that, 
+						traditionally, each language use its own way to 
+						represent data types. So, a string of characters is a 
+						String objet for CLR, could be a PyString in Python and 
+						could be a MJSString in MyJScript</span>. </p>
+						<img src="/web/20110628062924im_/http://www.dotnetguru.org/us/dlrus/dlr2_3.jpg"/>
+						<p><span lang="fr">Each specific class String, PyString 
+						or MJSString provides methods and properties which gives 
+						the power of each language. But how handling 
+						interoperability if no one language share the same way 
+						to handle data types ?</span></p>
+						<p><span lang="fr">The DLR strategy is that only base 
+						types should be use. So a string of characters should be 
+						a 
+						String object whatever the language used. To allow that, 
+						the DLR use extension methods from .NET 3.5. For 
+						MyJScript, I want to add to the String type some methods 
+						like blink, bold and substr from JavaScript. Here is 
+						the source code to do that:</span></p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    [assembly: ExtensionType(<span class="kwrd">typeof</span>(<span class="kwrd">string</span>), <span class="kwrd">typeof</span>(MyJScript.Runtime.StringExtensions))]
+    <span class="kwrd">public</span> <span class="kwrd">static</span> <span class="kwrd">class</span> StringExtensions
+    {
+        <span class="kwrd">public</span> <span class="kwrd">static</span> <span class="kwrd">string</span> blink(<span class="kwrd">string</span> @<span class="kwrd">this</span>)
+        {
+            StringBuilder res = <span class="kwrd">new</span> StringBuilder(<span class="str">"&lt;blink&gt;"</span>);
+            res.Append(@<span class="kwrd">this</span>);
+            res.Append(<span class="str">"&lt;/blink&gt;"</span>);
+            <span class="kwrd">return</span> res.ToString();
+        }
+
+        <span class="kwrd">public</span> <span class="kwrd">static</span> <span class="kwrd">string</span> bold(<span class="kwrd">string</span> @<span class="kwrd">this</span>)
+        {
+            StringBuilder res = <span class="kwrd">new</span> StringBuilder(<span class="str">"&lt;bold&gt;"</span>);
+            res.Append(@<span class="kwrd">this</span>);
+            res.Append(<span class="str">"&lt;/bold&gt;"</span>);
+            <span class="kwrd">return</span> res.ToString();
+        }
+
+        <span class="kwrd">public</span> <span class="kwrd">static</span> <span class="kwrd">string</span> substr(<span class="kwrd">string</span> @<span class="kwrd">this</span>, <span class="kwrd">int</span> index)
+        {
+            <span class="kwrd">return</span> @<span class="kwrd">this</span>.Substring(index);
+        }
+
+        <span class="kwrd">public</span> <span class="kwrd">static</span> <span class="kwrd">string</span> substr(<span class="kwrd">string</span> @<span class="kwrd">this</span>, <span class="kwrd">int</span> index, <span class="kwrd">int</span> length)
+        {
+            <span class="kwrd">return</span> @<span class="kwrd">this</span>.Substring(index, length);
+        }
+    }
+</pre>
+						<p><span lang="fr">With only this few lines of code, a 
+						String could be handle like a JavaScript String. Note 
+						that extension methods allow only to add methods, not 
+						properties. If you&#39;re interested to add properties, you 
+						should use rules instead (see below).</span></p>
+						<h2><a name="10">R<span lang="fr">ules to run your 
+						syntax tree</span></a></h2>
+						<p><span lang="fr">Here a sum up of what we learnt. To 
+						run our MyJScript statements, said &quot;1 + 1&quot;, I just need 
+						to return a syntax tree from the language context&#39;s 
+						entry point ParseSourceCode. Here, I just have to 
+						return:</span></p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    Ast.Action.Operator(
+        Operators.Add,
+        <span class="kwrd">typeof</span>(<span class="kwrd">object</span>),
+        Ast.Constant(1),
+        Ast.Constant(1)
+    )</pre>
+						<p><span lang="fr">What I need to do to run this ? 
+						Nothing ! When this syntax tree is received by the DLR, 
+						it is automatically translate to IL code and run. In my 
+						case the DLR just call sum of two integers.</span></p>
+						<p><span lang="fr">It works because the DLR already known 
+						standard rules for most of data types. So I don&#39;t need 
+						to write something else.</span></p>
+						<p><span lang="fr">Let&#39;s change now my sample to &quot; 1 + 
+						&#39;A&#39; &quot;</span>.<span lang="fr"> This source code is a 
+						valid MyJScript statement because, like JavaScript, 
+						MyJScript provides implicit conversion between integers 
+						and strings. Here is the syntax tree:</span></p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    Ast.Action.Operator(
+        Operators.Add,
+        <span class="kwrd">typeof</span>(<span class="kwrd">object</span>),
+        Ast.Constant(1),
+        Ast.Constant(<span class="str">"A"</span>)
+    )
+</pre>
+						<p><span lang="fr">But here, it doesn&#39;t work ! The DLR 
+						doesn&#39;t know how to add a string to an integer. The DLR 
+						doesn&#39;t know this rule, we should learn it to him.</span></p>
+						<p><span lang="fr">Rules are part of the Binder object 
+						built during language context initialization. Below is an 
+						extract from MJSBinder class:</span></p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    <span class="kwrd">public</span> <span class="kwrd">class</span> MJSBinder : ActionBinder
+    {
+        <span class="kwrd">public</span> MJSBinder(CodeContext context) : <span class="kwrd">base</span>(context)
+        {
+        }
+
+        <span class="kwrd">protected</span> <span class="kwrd">override</span> StandardRule&lt;T&gt; MakeRule&lt;T&gt;(CodeContext callerContext, DynamicAction action, <span class="kwrd">object</span>[] args)
+        {
+            <span class="kwrd">if</span> (operation.Operation == Operators.Add
+              &amp;&amp; args[0] <span class="kwrd">is</span> <span class="kwrd">int</span>
+              &amp;&amp; args[1] <span class="kwrd">is</span> <span class="kwrd">string</span>)
+            {
+                <span class="rem">// <span lang="fr">Rule to add string and int in</span> MyJScript</span>
+                <span class="kwrd">return</span> MakeAddStringRule&lt;T&gt;(callerContext, action, args);
+            }
+
+            <span class="rem">// L<span lang="fr">eave DLR find a rule</span></span>
+            <span class="kwrd">return</span> <span class="kwrd">base</span>.MakeRule&lt;T&gt;(callerContext, action, args);
+         }
+
+    ...
+    }
+</pre>
+						<p><span lang="fr">The heart of MJSBinder is the 
+						MakeRule method. MakeRule is called each time the DLR find an expression 
+						that it doesn&#39;t know how to run. 
+						The MakeRule method must return a rule: a condition to 
+						run the rule and the code to be run. Both parts of a 
+						rule are AST as those seen previously. Here is the 
+						source code for my MakeAddStringRule method:</span></p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+        <span class="kwrd">private</span> StandardRule&lt;T&gt; MakeAddStringRule&lt;T&gt;(CodeContext callerContext, DynamicAction action, <span class="kwrd">object</span>[] args)
+        {
+            StandardRule&lt;T&gt; rule = <span class="kwrd">new</span> StandardRule&lt;T&gt;();
+
+            <span class="rem">// <span lang="fr">Same as</span>: (p0 is int) &amp;&amp; (p1 is string)</span>
+            rule.Test =
+                Ast.AndAlso(
+                    Ast.TypeIs(rule.Parameters[0], <span class="kwrd">typeof</span>(<span class="kwrd">int</span>)),
+                    Ast.TypeIs(rule.Parameters[1], <span class="kwrd">typeof</span>(<span class="kwrd">string</span>))
+                );
+
+            <span class="rem">// <span lang="fr">Same as</span>: string.Contat(p0.ToString(), p1)</span>
+            rule.Target =
+                rule.MakeReturn(<span class="kwrd">this</span>,
+                    Ast.Call(
+                        <span class="kwrd">typeof</span>(<span class="kwrd">string</span>).GetMethod(<span class="str">"Concat"</span>, <span class="kwrd">new</span> Type[] { <span class="kwrd">typeof</span>(<span class="kwrd">string</span>), <span class="kwrd">typeof</span>(<span class="kwrd">string</span>) }),
+                        Ast.Call(
+                            Ast.Convert(rule.Parameters[0], <span class="kwrd">typeof</span>(<span class="kwrd">object</span>)),
+                            <span class="kwrd">typeof</span>(<span class="kwrd">object</span>).GetMethod(<span class="str">"ToString"</span>, <span class="kwrd">new</span> Type[0])
+                        ),
+                        Ast.Convert(rule.Parameters[1], <span class="kwrd">typeof</span>(<span class="kwrd">string</span>))
+                    );
+
+          <span class="kwrd">return</span> rule;
+      }
+</pre>
+						<p>This<span lang="fr"> rule consists in a test and a 
+						target. The test (set on StandardRule.Test property) 
+						checks if the first parameter is an integer and if the 
+						second one is a string. The target (set on StandardRule.Target 
+						property) is the tree to run to obtain the 
+						result. Here, the target is the first parameter converted 
+						to a string concatenated with the second parameter.
+						</span></p>
+						<p><span lang="fr">Once a rule is created, the DLR has 
+						every thing in order run our expression &quot;1 + &#39;A&#39;&quot;</span>.<span lang="fr"> 
+						More: if the DLR find another time one integer plus one 
+						string, the rule will be applied without a new call to 
+						our MJSBinder.MakeRule method.</span></p>
+						<p><span lang="fr">Each rule from MyJScript should be 
+						described in the same way</span>.<span lang="fr"> So it 
+						could be slightly verbose. It could be complex too if 
+						the target needs several complex operations. In this case, 
+						you could call a function instead. Let&#39;s see the 
+						following MyJScript expression:</span></p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    <span class="str">'10'</span> &lt; 2
+</pre>
+						<p><span lang="fr">Comparing the two members of this 
+						expression using a string conversion will produce a wrong 
+						result. The reason is that the number 1 is before the 
+						number 2 in the lexicographic order. To get the right result, the left member should be converted before doing 
+						any comparison. That&#39;s what has been done by the JavaScript 
+						interpreter. This process requires to try conversion 
+						first then to do a comparison as string or as integer 
+						depending on the result of the conversion. It&#39;s 
+						difficult to do that in an AST, so we should use a method 
+						instead. The method &quot;MJSLibrary.Compare&quot; does this work 
+						for us. So, here is the rule to compare an integer and a 
+						string: </span> </p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+       <span class="kwrd">private</span> StandardRule&lt;T&gt; MakeCompareStringRule&lt;T&gt;(CodeContext callerContext, DynamicAction action, <span class="kwrd">object</span>[] args)
+        {
+            StandardRule&lt;T&gt; rule = <span class="kwrd">new</span> StandardRule&lt;T&gt;();
+
+            <span class="rem">// <span lang="fr">Same as</span>: (p0 is string) &amp;&amp; (p1 is int)</span>
+            rule.Test =
+                Ast.AndAlso(
+                   Ast.TypeIs(rule.Parameters[0], <span class="kwrd">typeof</span>(<span class="kwrd">string</span>)),
+                   Ast.TypeIs(rule.Parameters[1], <span class="kwrd">typeof</span>(<span class="kwrd">int</span>))
+                );
+
+            <span class="rem">// <span lang="fr">Same as</span>: MJSLibrary.CompareTo(p0, p1) &lt; 0</span>
+            rule.Target =
+                rule.MakeReturn(<span class="kwrd">this</span>,
+                    Ast.LessThan(
+                        Ast.Call(
+                 <span class="kwrd">      </span>    <span class="kwrd">typeof</span>(MJSLibrary).GetMethod(<span class="str">"CompareTo"</span>),
+                           rule.Parameters[0],
+                           rule.Parameters[1]
+                        ),
+                    Ast.Constant(0)
+                    );
+
+          <span class="kwrd">return</span> rule;
+      }
+</pre>
+						<h2><a name="11">Object oriented programming with MyJScript</a></h2>
+						<p>The DLR could be used not only to handle values for 
+						base types but also to handle instances in an object 
+						oriented language. We are going to see how in few 
+						minutes. But let&#39;s see first how objects are handled in 
+						JavaScript.</p>
+						<p>In JavaScript, objects are just collections of name/value 
+						pairs. A good way to check this out is to explore the 
+						JavaScript Object Notation (JSON). So, for example, our 
+						&quot;Cat&quot; object is usually declared like this:</p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    <span class="kwrd">function</span> Cat(name) {
+        <span class="kwrd">this</span>.name = name;
+        <span class="kwrd">this</span>.miaow = function () { alert(<span class="kwrd">this</span>.name+<span class="str">' said Miaow'</span>); };
+    }
+
+    x = <span class="kwrd">new</span> Cat(<span class="str">'Felix'</span>);
+</pre>
+						<p>but it could be declared like this using JSON: </p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    x = { <span class="str">"name"</span>:<span class="str">"Felix"</span>, <span class="str">"miaow"</span>: <span class="kwrd">function</span>() { alert(<span class="kwrd">this</span>.name+<span class="str">' said Miaow'</span>); } }</pre>
+						<p>Both declarations do exactly the same thing. In 
+						JavaScript, there is no need to declare in first each class 
+						with its properties and methods. JavaScript objects 
+						are built progressively each time that its members are 
+						set. The JavaScript syntax &quot;new Constructor(...)&quot; is 
+						just a syntaxic sugar to create an empty object then 
+						call an initializer function. So, the third way to 
+						initialize a JavaScript object could be:</p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    x = {};
+    Cat.call(x, <span class="str">'Felix'</span>);
+</pre>
+						<p>Note that in JavaScript, a function is just an object 
+						providing a specific method &quot;call&quot; which takes as 
+						parameter the value for this and the constructor&#39;s parameters. Because a function is just a value, 
+						adding a new method to an instance is as easy as setting 
+						a new member to the instance (like for &quot;miaow&quot; in our 
+						sample).</p>
+						<p>MyJScript objects work in a very similar way than 
+						JavaScript. The following snippet provides some details 
+						regarding the MJSObject source code. The MJSObject class is used for each 
+						MyJScript instance:</p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    <span class="kwrd">public</span> <span class="kwrd">class</span> MJSObject
+    {
+        Dictionary&lt;<span class="kwrd">string</span>, <span class="kwrd">object</span>&gt; members;
+
+        <span class="kwrd">public</span> MJSObject()
+        {
+            <span class="kwrd">this</span>.members = <span class="kwrd">new</span> Dictionary&lt;<span class="kwrd">string</span>, <span class="kwrd">object</span>&gt;();
+        }
+
+        <span class="kwrd">public</span> <span class="kwrd">bool</span> HasMember(<span class="kwrd">string</span> name)
+        {
+            <span class="kwrd">return</span> members.ContainsKey(name);
+        }
+
+        <span class="kwrd">public</span> <span class="kwrd">virtual</span> <span class="kwrd">void</span> Set(<span class="kwrd">string</span> name, <span class="kwrd">object</span> <span class="kwrd">value</span>)
+        {
+            <span class="kwrd">if</span> (members.ContainsKey(name))
+                members.Remove(name);
+
+            members.Add(name, <span class="kwrd">value</span>);
+        }
+
+        <span class="kwrd">public</span> <span class="kwrd">virtual</span> <span class="kwrd">object</span> Get(<span class="kwrd">string</span> name)
+        {
+            <span class="kwrd">if</span> (!members.ContainsKey(name))
+                <span class="kwrd">return</span> <span class="kwrd">null</span>;
+
+            <span class="kwrd">return</span> members[name];
+        }
+    }
+</pre>
+						<p>The MJSObject class is a dictionary of name/values. 
+						Each name stores instance variables: properties or 
+						methods (like &quot;name&quot; 
+						or &quot;miaow&quot; in our previous sample).</p>
+						<h2><a name="12">Set and Get object properties</a></h2>
+						<p>The MyJScript compiler allows you to create an empty 
+						object using this statement: </p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    x = {};
+</pre>
+
+						<p>The MyJScript parser translates this statement into 
+						this tree:</p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    Ast.Statement(span,
+        Ast.Assign(
+            x,
+            Ast.New(
+                <span class="kwrd">typeof</span>(MJSObject).GetConstructor(<span class="kwrd">new</span> Type[0])
+            )
+        )
+   );
+</pre>
+						<p>It means: the result of the call of to MJSObject&#39;s 
+						constructor without parameter is assigned to the 
+						variable &quot;x&quot;.</p>
+						<p>Then, to set or to get members for the new object, I 
+						should first teach to DLR these operations. So, I add 
+						two new rules to my MJSBinder class:</p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+        <span class="kwrd">private</span> StandardRule&lt;T&gt; MakeSetMemberRule&lt;T&gt;(CodeContext callerContext, DynamicAction action, <span class="kwrd">object</span>[] args)
+        {
+            SetMemberAction setmember = (SetMemberAction)action;
+            StandardRule&lt;T&gt; rule = <span class="kwrd">new</span> StandardRule&lt;T&gt;();
+
+            <span class="rem">// Same as: (p0 is MJSObject)</span>
+            rule.Test = Ast.TypeIs(rule.Parameters[0], <span class="kwrd">typeof</span>(MJSObject));
+
+            <span class="rem">// Same as: (p0 as MJSObject).Set(name, p1)</span>
+            rule.Target =
+                rule.MakeReturn(<span class="kwrd">this</span>,
+                    Ast.Call(
+                        Ast.Convert(rule.Parameters[0], <span class="kwrd">typeof</span>(MJSObject)),
+                        <span class="kwrd">typeof</span>(MJSObject).GetMethod(<span class="str">"Set"</span>, <span class="kwrd">new</span> Type[] { <span class="kwrd">typeof</span>(<span class="kwrd">string</span>), <span class="kwrd">typeof</span>(<span class="kwrd">object</span>) }),
+                        Ast.Constant(SymbolTable.IdToString(setmember.Name)),
+                        Ast.Convert(rule.Parameters[1], <span class="kwrd">typeof</span>(<span class="kwrd">object</span>))
+                    )
+                );
+
+            <span class="kwrd">return</span> rule;
+        }
+
+
+        <span class="kwrd">private</span> StandardRule&lt;T&gt; MakeGetMemberObjectRule&lt;T&gt;(CodeContext callerContext, DynamicAction action, <span class="kwrd">object</span>[] args)
+        {
+            GetMemberAction getmember = (GetMemberAction)action;
+            StandardRule&lt;T&gt; rule = <span class="kwrd">new</span> StandardRule&lt;T&gt;();
+
+            <span class="rem">// Same as: (p0 is MJSObject)</span>
+            rule.Test = Ast.TypeIs(rule.Parameters[0], <span class="kwrd">typeof</span>(MJSObject));
+
+            <span class="rem">// Same as: (p0 as MJSObject).Get(name)</span>
+            rule.Target =
+                rule.MakeReturn(<span class="kwrd">this</span>,
+                    Ast.Call(
+                        Ast.Convert(rule.Parameters[0], <span class="kwrd">typeof</span>(MJSObject)),
+                        <span class="kwrd">typeof</span>(MJSObject).GetMethod(<span class="str">"Get"</span>, <span class="kwrd">new</span> Type[] { <span class="kwrd">typeof</span>(<span class="kwrd">string</span>) }),
+                        Ast.Constant(SymbolTable.IdToString(getmember.Name))
+                    )
+                );
+
+            <span class="kwrd">return</span> rule;
+        }
+</pre>
+						<p>The first rule is called when MJSBinder.MakeRule meet 
+						a &quot;SetMember&quot; operation. The condition to run this rule 
+						is that the type of object is &quot;MJSObject&quot;. The code to 
+						run is a call to MJSObject.Set with the property name 
+						and the value to set as parameters. The second rule is 
+						called when MJSBinder.MakeRule meet a &quot;GetMember&quot; 
+						operation. The condition and the code to run are similar 
+						to the first rule but use a call to &quot;MJSObject.Get&quot; 
+						instead.</p>
+						<p>Thanks to these rules, the MyJScript compiler is now 
+						able to run statements:</p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    x.name = <span class="str">"Hello"</span>;
+    write(x.name);
+</pre>
+						<h2><a name="13">Build and call methods</a></h2>
+						<p>Let&#39;s see now how I can use methods. Here are 
+						MyJScript statements to declare and call an instance 
+						method:</p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    x.foo = <span class="kwrd">function</span>(n) { write(n); }
+    x.foo(<span class="str">"Hello"</span>);
+</pre>
+						<p>We saw before that the parser translates a function 
+						into a LambdaExpression. It&#39;s easy to call a 
+						LambdaExpression because, behind the scene, the DLR 
+						translates LambdaExpression into a .NET delegate. So, to 
+						call a LambdaExpression, I just need to generate a call. 
+						Here how methods call are handled in MyJScript:</p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+        <span class="kwrd">public</span> Expression MethodCall(Expression instance, String function, List&lt;Expression&gt; values)
+        {
+            <span class="kwrd">int</span> length = values.Count;
+            Expression[] array = <span class="kwrd">new</span> Expression[length+1];
+
+            array[0] = instance;
+            <span class="kwrd">for</span> (<span class="kwrd">int</span> i = 0; i &lt; length; i++)
+                array[i+1] = values[i];
+
+            <span class="kwrd">return</span> Ast.Action.InvokeMember(
+                SymbolTable.StringToId(function),
+                <span class="kwrd">typeof</span>(<span class="kwrd">object</span>),
+                InvokeMemberActionFlags.None,
+                <span class="kwrd">new</span> CallSignature(values.Count),
+                array
+                );
+        }
+</pre>
+						<p>MyJScript builds a new array for parameters adding the 
+						instance as first parameter, then MyJScript launches the 
+						call of the member using InvokeMember action.</p>
+						<p>Because MyJScript should retrieve the instance in the 
+						&quot;this&quot; parameter, I need to add a new rule to the 
+						MJSBinder. This rule will be call for &quot;InvokeMember&quot; 
+						operation on MJSObject type:</p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+        <span class="kwrd">private</span> StandardRule&lt;T&gt; MakeInvokeMemberRule&lt;T&gt;(CodeContext callerContext, DynamicAction action, <span class="kwrd">object</span>[] args)
+        {
+            StandardRule&lt;T&gt; rule = <span class="kwrd">new</span> StandardRule&lt;T&gt;();
+            InvokeMemberAction invokeMember = (InvokeMemberAction)action;
+
+            <span class="rem">// Same as: (p0 is MJSObject)</span>
+            rule.Test = Ast.TypeIs(rule.Parameters[0], <span class="kwrd">typeof</span>(MJSObject));
+
+            Expression method = Ast.Action.GetMember(
+                invokeMember.Name,
+                <span class="kwrd">typeof</span>(<span class="kwrd">object</span>),
+                rule.Parameters[0]
+             );
+
+            Expression[] newparam = <span class="kwrd">new</span> Expression[rule.Parameters.Length + 1];
+            newparam[0] = method;
+            <span class="kwrd">for</span> (<span class="kwrd">int</span> i = 0; i &lt; rule.Parameters.Length; i++)
+                newparam[i + 1] = rule.Parameters[i];
+
+            <span class="rem">// Same as: p0.name(p0, p1, … pn)</span>
+            rule.Target =
+                rule.MakeReturn(<span class="kwrd">this</span>,
+                    Ast.Action.Call(
+                        <span class="kwrd">typeof</span>(<span class="kwrd">object</span>),
+                        newparam
+                    )
+                );
+
+            <span class="kwrd">return</span> rule;
+        }
+</pre>
+						<p>This rule achieves its role in three steps: first, 
+						get member&#39;s value, then add the current instance as 
+						parameter (it&#39;s the &quot;this&quot; parameter) and finally call 
+						method using these new parameters.</p>
+						<h2><a name="14">Global context and built-in</a> 
+						functions</h2>
+						<p>The global context is the last point to see to 
+						achieve MyJScript overview. In JavaScript, everything 
+						defined globally is a member of the global object. So, a 
+						global variable or a global function is bound to this 
+						global object. Let&#39;s see an example:</p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    x = <span class="str">'Hello'</span>;
+    alert(<span class="kwrd">this</span>.x);     <span class="rem">// Print Hello</span>
+</pre>
+						<p>More cool: I can transform our global object into a 
+						&quot;Cat&quot; (should be avoid in real life !). To do that, I just 
+						call the Cat&#39;s constructor: </p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    <span class="kwrd">this</span>.Cat(<span class="str">'Felix'</span>);
+    alert(name);      <span class="rem">// Print Felix</span>
+    miaow();          <span class="rem">// Print Felix said Miaow</span>
+</pre>
+						<p>In MyJScript, this global context is an MJSObject 
+						Singleton. Here is the source code to host this 
+						singleton: </p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+        <span class="kwrd">public</span> <span class="kwrd">class</span> MJSContext
+        {
+            <span class="kwrd">static</span> MJSObject @<span class="kwrd">this</span> = <span class="kwrd">null</span>;
+    
+            <span class="kwrd">public</span> <span class="kwrd">static</span> MJSObject GetContext()
+            {
+                <span class="kwrd">if</span> (@<span class="kwrd">this</span> == <span class="kwrd">null</span>)
+                    @<span class="kwrd">this</span> = <span class="kwrd">new</span> MJSObject();
+                <span class="kwrd">return</span> @<span class="kwrd">this</span>;
+            }
+        }
+</pre>
+						<p>Every operation done on global variables and global 
+						functions should also be done into the global context. 
+						So, assigning a global variable should generate two 
+						statements tree: </p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+        <span class="kwrd">public</span> Expression AssignGlobalVariable(Variable variable, Expression <span class="kwrd">value</span>)
+        {
+            List&lt;Expression&gt; statements = <span class="kwrd">new</span> List&lt;Expression&gt;();
+
+            <span class="rem">// variable = value</span>
+            statements.Add(
+                    Ast.Assign(
+                        variable,
+                        Ast.Convert(<span class="kwrd">value</span>,  <span class="kwrd">typeof</span>(<span class="kwrd">object</span>))
+                    )
+             );
+
+            <span class="rem">// MJSContext.GetContext().Set(variable, value)</span>
+            statements.Add(
+                    Ast.Action.SetMember(
+                        SymbolTable.StringToId(variable.Name),
+                        <span class="kwrd">typeof</span>(<span class="kwrd">object</span>),
+                        Ast.Call( <span class="kwrd">typeof</span>(MJSContext).GetMethod(<span class="str">"GetContext"</span>, <span class="kwrd">new</span> Type[0]))
+                    ),
+                    Ast.Read(variable)
+            );
+
+            <span class="kwrd">return</span> Ast.Block(statements);
+        }
+</pre>
+						<p>The first statement assigns variable&#39;s value, the 
+						second one calls MJSContext.GetContext().Set() to assign 
+						the matching member in the global context.</p>
+						<p>The global context is also used to host MyJScript &quot;built-in&quot; 
+						functions like &quot;write&quot;:</p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    <span class="kwrd">public</span> <span class="kwrd">class</span> MJSLibrary
+    {
+        <span class="kwrd">internal</span> <span class="kwrd">static</span> <span class="kwrd">void</span> Initialize()
+        {
+            MJSObject mjscontext = MJSContext.GetContext();
+            mjscontext.Set(
+                <span class="str">"write"</span>,
+                ReflectionUtils.CreateDelegate(
+                    <span class="kwrd">typeof</span>(MJSLibrary).GetMethod(<span class="str">"Write"</span>),
+                    <span class="kwrd">typeof</span>(MyJScriptCallTarget)
+                )
+            );
+           ...
+        }
+
+        <span class="kwrd">public</span> <span class="kwrd">static</span> <span class="kwrd">object</span> Write(<span class="kwrd">object</span> @<span class="kwrd">this</span>, <span class="kwrd">object</span> <span class="kwrd">value</span>)
+        {
+            Console.WriteLine(<span class="kwrd">value</span> != <span class="kwrd">null</span> ? <span class="kwrd">value</span>.ToString() : <span class="str">"&lt;null&gt;"</span>);
+            <span class="kwrd">return</span> <span class="kwrd">null</span>;
+        }
+    }
+</pre>
+						<p>Let&#39;s look back now on MJSContext.TryLookupGlobal 
+						method that we saw in first paragraph of this article. 
+						This method is called by DLR to solve unknown variable 
+						name. Below is the source code of this method in 
+						MyJScript:</p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+        <span class="kwrd">public</span> <span class="kwrd">override</span> <span class="kwrd">bool</span> TryLookupGlobal(CodeContext context, SymbolId name, <span class="kwrd">out</span> <span class="kwrd">object</span> <span class="kwrd">value</span>)
+        {
+            MJSObject mjscontext = MJSContext.GetContext();
+            <span class="kwrd">string</span> memberName = SymbolTable.IdToString(name);
+            <span class="kwrd">if</span> (mjscontext.HasMember(memberName))
+            {
+                <span class="kwrd">value</span> = mjscontext.Get(memberName);
+                <span class="kwrd">return</span> <span class="kwrd">true</span>;
+            }
+
+            <span class="kwrd">return</span> <span class="kwrd">base</span>.TryLookupGlobal(context, name, <span class="kwrd">out</span> <span class="kwrd">value</span>);
+        }
+</pre>
+						<h2><a name="15">CLR</a> interoperability</h2>
+						<p>As we saw before, base types like &quot;string&quot; or &quot;int&quot; 
+						are shared types for all DLR languages. Thanks to this, 
+						I could use transparently in MyJScript properties and 
+						methods coming from this types. Here are some examples:</p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+        a=<span class="str">'Hello'</span>;
+        write(a.Length);
+        write(a.ToUpper() + <span class="str">' WORLD!'</span>);
+</pre>
+						<p>Note that calling &quot;Length&quot; property and &quot;ToUpper&quot; 
+						method doesn&#39;t launch MyJScript&#39;s rules. That&#39;s because 
+						MyJScript&#39;s rules are only set for MJSObjects. However, 
+						the result of plus operation between &quot;ToUpper&quot; and a 
+						string constant really come from a MyJScript rule.</p>
+						<p>The DLR provides also a way to import objects from 
+						other CLR assemblies. Because this feature doesn&#39;t exist 
+						in JavaScript, I add in MyJScript a &quot;using&quot; keyword 
+						like in C#. See below an example using this new keyword.</p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+        <span class="kwrd">using</span> System;
+
+        <span class="kwrd">var</span> date = System.DateTime;
+        <span class="kwrd">var</span> now=date.Now;
+        write(now.Year);
+        write(now.ToString());
+</pre>
+						<p>A deep discussion about how to implement &quot;using&quot; is 
+						not really interesting. You could only remember that I just need to call a DLR method named &quot;LanguageContext.DomainManager.Globals.TryGetName(name)&quot;. 
+						This method loads a variable in the current context with 
+						all member for each class and object in the context.</p>
+						<h2><a name="16">Command line</a> interpreter</h2>
+						<p>The MyJScript compiler is now finished. So, it could 
+						be nice to write a command line interpreter to run 
+						MyJScript commands or scripts. The DLR provides standard 
+						functions to write very easily a console. Here is all 
+						the code needed. It should derive from the&nbsp; Microsoft.Script.Hosting.ConsoleHost: </p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    <span class="kwrd">public</span> <span class="kwrd">class</span> MJSConsole : ConsoleHost
+    {
+        <span class="kwrd">protected</span> <span class="kwrd">override</span> <span class="kwrd">void</span> Initialize()
+        {
+            <span class="kwrd">base</span>.Initialize();
+            <span class="kwrd">this</span>.Options.ScriptEngine = ScriptEnvironment.GetEnvironment().GetEngine(<span class="kwrd">typeof</span>(MJSLanguageContext));
+            Environment.LoadAssembly(<span class="kwrd">typeof</span>(<span class="kwrd">string</span>).Assembly)
+        }
+
+        [STAThread]
+        <span class="kwrd">static</span> <span class="kwrd">int</span> Main(<span class="kwrd">string</span>[] args)
+        {
+            <span class="kwrd">return</span> <span class="kwrd">new</span> MJSConsole().Run(args);
+        }
+    }
+</pre>
+						<p>We could slightly customize this command line with a 
+						logo and a specific prompt. To do that, we should add a MJSCommandLine 
+						class linked to the MJSLanguageContext class. </p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    <span class="kwrd">class</span> MJSCommandLine : CommandLine
+    {
+        <span class="kwrd">protected</span> <span class="kwrd">override</span> <span class="kwrd">string</span> Logo
+        {
+            get
+            {
+                <span class="kwrd">return</span> <span class="str">"MyJScript Command line\r\nLGPL Copyright (c) Lionel Laské 2008\r\nType CTRL-Z and RETURN to quit\r\n\r\n"</span>;
+            }
+        }
+
+        <span class="kwrd">protected</span> <span class="kwrd">override</span> <span class="kwrd">string</span> Prompt
+        {
+            get
+            {
+                <span class="kwrd">return</span> <span class="str">"mjs&gt; "</span>;
+            }
+        }
+    }
+</pre>
+						<p>That&#39;s all ! With only these few lines, the MyJScript 
+						interpreter can:</p>
+						<ul>
+							<li>Run statements from the command line,</li>
+							<li>Run statements from a file,</li>
+							<li>Provide lot of DLR options (see below). </li>
+						</ul>
+						<img src="/web/20110628062924im_/http://www.dotnetguru.org/us/dlrus/dlr2_4.jpg"/>
+						<h2><a name="17">Interoperability with other DLR</a> 
+						languages</h2>
+						<p>We saw how MyJScript can interoperate with CLR types. 
+						Let&#39;s see now how MyJScript can interoperate with other 
+						DLR languages and, more precisely, interoperate with the 
+						most famous one: IronPython.</p>
+						<p>The previous paragraph shows how you could create a 
+						console to host the DLR. You&#39;ve also have the 
+						opportunity to host yourself the DLR and its languages. 
+						It could be done first with a call to create a new 
+						ScriptRuntime object. Here how:</p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    <span class="rem">// Create a new DLR runtime</span>
+    ScriptRuntime runtime = ScriptRuntime.Create();
+
+    <span class="rem">// Create a global scope</span>
+    ScriptScope globals = runtime.CreateScope();</pre>						
+						<p>Then, we need to load the language runtime from its 
+						context. It&#39;s a Microsoft.Script.Hosting.ScriptEngine 
+						object: </p>
+<pre class="csharpcode">
+    <span class="rem">// Load MyJScript engine</span>
+    ScriptEngine myjscript = runtime.GetEngine(<span class="kwrd">typeof</span>(MyJScript.DLR.MJSLanguageContext));
+
+    <span class="rem">// Run a command on MyJScript engine</span>
+    ScriptSource mjssrc = myjscript.CreateScriptSourceFromString(<span class="str">"write('Hello world!');"</span>);
+    mjssrc.Execute(globals);
+</pre>
+						<p>I&#39;m doing the same thing for IronPython engine:</p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    <span class="rem">// Load IronPython engine</span>
+    ScriptEngine python = runtime.GetEngine(<span class="kwrd">typeof</span>(IronPython.Runtime.PythonContext));
+
+    <span class="rem">// Run a command on IronPython engine</span>
+    SriptSource pysrc = python.CreateScriptSourceFromString(<span class="str">"print 'Hello world!';"</span>, SourceCodeKind.Statements);
+    pysrc.Execute(globals);
+</pre>
+						<p>Let&#39;s now write an utility function RunProgram to 
+						easier call in next samples. </p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    <span class="kwrd">static</span> <span class="kwrd">private</span> <span class="kwrd">void</span> RunProgram(ScriptEngine engine, <span class="kwrd">string</span> command)
+    {
+        ScriptSource src = engine.CreateScriptSourceFromString(command, SourceCodeKind.Statements);
+        src.Execute(globals);
+    }</pre>
+						<p>I could now have a combined call to both compilers: IronPython 
+						and MyJScript.</p>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<pre class="csharpcode">
+    <span class="rem">// Call a MyJScript variable from IronPython</span>
+    RunProgram(myjscript, <span class="str">"a='MyJScript';"</span>);
+    RunProgram(python, <span class="str">"print 'Hello',a;"</span>);
+    
+    <span class="rem">// Call a IronPython variable from MyJScript</span>
+    RunProgram(python, <span class="str">"b='IronPython';"</span>);
+    RunProgram(myjscript, <span class="str">"write('Hello '+b);"</span>);
+</pre>
+						<p>In these samples, a variable is initialized in one 
+						language then the same variable is used in the other 
+						language. Each time, specific rules to the current 
+						language are applied.</p>
+						<p>It could be nice also to create a MyJScript object 
+						then to use this object in IronPython or conversely. 
+						However, it&#39;s not as easy. In fact, each language use 
+						its own rules. IronPython doesn&#39;t know how to handle 
+						MJSObject and MyJScript doesn&#39;t know how to handle 
+						PyObject. So mixing objects in a multi-language 
+						environment is a more complex process.</p>
+						<h2><a name="18">To learn more</a></h2>
+						<h3>About DLR</h3>
+						<p>There are very few documentation on the DLR today. The
+						<a href="https://web.archive.org/web/20110628062924/http://blogs.msdn.com/hugunin/">
+						Jim Hugunin&#39;s blog</a> is the DLR bible but 
+						unfortunately, there are few posts inside and no recent post. However this blog is very interesting to 
+						read to learn more about concepts inside DLR.</p>
+						<p>The <a href="https://web.archive.org/web/20110628062924/http://www.iunknown.com/">John Lam&#39; blog</a> 
+						is also an interesting way to get information about DLR. 
+						John works on IronRuby team. His blog is updated very 
+						often but doesn&#39;t talk exclusively about DLR.</p>
+						<p><a href="https://web.archive.org/web/20110628062924/http://blogs.msdn.com/mmaly/">Martin Maly</a>, one of the DLR author has started 
+						recently a blog dedicated to the DLR. This blog is 
+						really the best path today to understand the DLR way of 
+						working. Lot of features of the DLR are described in 
+						each post and from the beginning, there are already more 
+						than ten posts that have been published here. </p>
+						<p>A good way to study DLR could be also to study the 
+						DLR source code. It&#39;s possible because the DLR is an 
+						open source project. Unfortunately, the source code 
+						includes very few comments and the documentation inside 
+						is just a compilation of all comment... It&#39;s very 
+						interesting to have a look on how DLR languages are 
+						implemented.
+						<a href="https://web.archive.org/web/20110628062924/http://www.iunknown.com/2007/06/getting_started.html">Toyscript</a> 
+						is a tiny basic downloadable with the DLR. It was 
+						created to be used as a tutorial so it&#39;s a good 
+						introduction to the DLR. Of course you could also study
+						<a href="https://web.archive.org/web/20110628062924/http://www.codeplex.com/IronPython">IronPython</a> 
+						or <a href="https://web.archive.org/web/20110628062924/http://www.ironruby.net/">IronRuby</a> 
+						source code but, due to the number of lines, there are 
+						more complexes to understand.</p>
+						<p>Few webcasts are interesting to go deep inside the 
+						DLR. If you&#39;ve got an access to TechEd 2007&#39;s video, see 
+						for example the excellent session WEB404 from Martin 
+						Maly. More recently, the
+						<a href="https://web.archive.org/web/20110628062924/http://langnetsymposium.com/talks.asp">Lang.Net 
+						symposium</a><span class="style16"> has also lot of &quot;to-be-seen&quot; videos for guys interested by compilers</span>.</p>
+						<h3>About MyJScript</h3>
+						<p>The source code for MyJScript is downloadable on 
+						CodePlex (<a href="https://web.archive.org/web/20110628062924/http://www.codeplex.com/MyJScript">http://www.codeplex.com/MyJScript</a>). 
+						The code includes lot of comments and unit testing from 
+						all major features. MyJScript has been write as a 
+						tutorial to learn compiler technology and the DLR. So, 
+						MyJScript is not a true JavaScript compiler.</p>
+						<p>Two major JavaScript features has been simplified in 
+						MyJScript:</p>
+						<ul>
+							<li>A function can&#39;t be used before its declaration. 
+							Because MyJScript generate AST &quot;on the fly&quot;, it 
+							can&#39;t see a function declared below. To avoid this, 
+							most of languages build on DLR use an intermediate 
+							tree instead of an AST.</li>
+							<li>MyJScript objects can&#39;t derive from others 
+							objects using &quot;prototype&quot; function (see the great
+							<a href="https://web.archive.org/web/20110628062924/http://msdn.microsoft.com/msdnmag/issues/07/05/JavaScript/default.aspx">article 
+							from Ray Djajadinata</a> on MSDN to learn more on 
+							this). Heritage could be added in MyJScript with some 
+							changes in MJSObject implementation.</li>
+						</ul>
+						<h2><a name="19">Conclusion</a></h2>
+						<p>This article talks about most important features of 
+						the DLR:</p>
+						<ul>
+							<li>AST: allows you to build easily a set of 
+							statements and generate it to IL code.</li>
+							<li>Rules: provide a non intrusive way to teach to 
+							the DLR all specific features (conversion, member 
+							function, extended types, ...) of your language.</li>
+							<li>Hosting: allows you to generate very easily a 
+							console for your language or include a DLR language 
+							in your application.</li>
+						</ul>
+						<p>Thanks to these three features, the DLR provides 
+						basic tools to write your own language with native 
+						CLR interoperability and with other DLR 
+						languages. It&#39;s no doubt that it&#39;s really the power of the 
+						DLR.</p>
+						<h2><a name="20">Acknowledgments</a></h2>
+						<p>Many thanks to Sami Jaber for his thorough reading of 
+						this article. Thanks also to Bill Chiles to suggest me to 
+						translate this article from french.</p>
+<table bgcolor="#eeeeee" width="100%"><tr><td>
+<img src="/web/20110628062924im_/http://www.dotnetguru.org/us/dlrus/llaske.jpg" width="66" height="99"/>
+</td>
+<td valign="top"><p><strong>Lionel Laské </strong>is software architect in C2S - 
+a software company based in France and subsidiary of Bouygues group. Lionel is 
+also the author of Liogo, an Open Source Logo compiler for .NET. Lionel can be 
+contacted at <a href="https://web.archive.org/web/20110628062924/mailto:llaske@c2s.fr">llaske@c2s.fr</a>.</p></td>
+<td bgcolor="white"><img src="/web/20110628062924im_/http://www.dotnetguru.org/us/dlrus/c2s.gif"/></td></tr></table>
+					</div>
+				</div>
+				<div id="footer">
+					<div id="footerBorder">
+						<div id="innerFooter">
+							<hr class="hide">
+							© 2008 DotNetGuru.org - Published on 10/03/2008</div>
+					</div>
+				</div>
+			</div>
+			<div id="bottomColorMask"></div>
+		</div>
+	</body></html><!--
+     FILE ARCHIVED ON 06:29:24 Jun 28, 2011 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 10:36:01 Sep 07, 2019.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  load_resource: 428.099
+  LoadShardBlock: 77.286 (3)
+  RedisCDXSource: 2.469
+  esindex: 0.009
+  exclusion.robots: 0.257
+  PetaboxLoader3.datanode: 394.078 (4)
+  CDXLines.iter: 14.548 (3)
+  exclusion.robots.policy: 0.246
+  captures_list: 97.963
+  PetaboxLoader3.resolve: 83.229
+-->
